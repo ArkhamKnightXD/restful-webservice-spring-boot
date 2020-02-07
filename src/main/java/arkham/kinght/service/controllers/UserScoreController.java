@@ -16,7 +16,7 @@ public class UserScoreController {
 
 
     @GetMapping("/save")
-    public void saveScore(@RequestParam(value = "name") String name, @RequestParam(value = "score") float score) {
+    public String saveScore(@RequestParam(value = "name") String name, @RequestParam(value = "score", required = false) Float score) {
 
         UserScore userScoreToSave = new UserScore();
 
@@ -24,6 +24,8 @@ public class UserScoreController {
         userScoreToSave.setScore(score);
 
         userScoreService.SaveUserScore(userScoreToSave);
+
+        return "Score saved";
     }
 
 
