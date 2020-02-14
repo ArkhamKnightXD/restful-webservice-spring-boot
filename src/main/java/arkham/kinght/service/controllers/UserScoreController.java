@@ -3,6 +3,8 @@ package arkham.kinght.service.controllers;
 import arkham.kinght.service.models.UserScore;
 import arkham.kinght.service.services.UserScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -33,6 +35,16 @@ public class UserScoreController {
         userScoreService.SaveUserScore(userScoreToSave);
 
         return "Score saved";
+    }
+
+
+    @PutMapping("/request")
+    public ResponseEntity saveScoreBody(@RequestBody UserScore userScoreToSave) {
+
+        userScoreService.SaveUserScore(userScoreToSave);
+
+
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
 
