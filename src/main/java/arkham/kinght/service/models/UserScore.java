@@ -43,13 +43,4 @@ public class UserScore {
         this.score = score;
     }
 
-
-    @Override
-    public String toString() {
-        return "UserScore{" +
-                "id=" + id +
-                ", playerName='" + playerName + '\'' +
-                ", score=" + score +
-                '}';
-    }
 }

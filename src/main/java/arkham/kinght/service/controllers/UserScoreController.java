@@ -3,8 +3,6 @@ package arkham.kinght.service.controllers;
 import arkham.kinght.service.models.UserScore;
 import arkham.kinght.service.services.UserScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -38,13 +36,13 @@ public class UserScoreController {
     }
 
 
+    //Este consigue los datos mediante el body y es mas seguro que conseguir los datos mediante url como en el savescore de arriba
     @PutMapping("/request")
-    public ResponseEntity saveScoreBody(@RequestBody UserScore userScoreToSave) {
+    public String saveScoreBody(@RequestBody UserScore userScoreToSave) {
 
         userScoreService.SaveUserScore(userScoreToSave);
 
-
-        return ResponseEntity.ok(HttpStatus.OK);
+        return "Score saved";
     }
 
 
