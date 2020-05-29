@@ -19,18 +19,6 @@ public class UserScoreService {
     }
 
 
-    public UserScore FindUserScoreById(Long id){
-
-        return userScoreRepository.findUserScoreById(id);
-    }
-
-
-    public void SaveAllUserScore(List<UserScore> userScoreList){
-
-        userScoreRepository.saveAll(userScoreList);
-    }
-
-
     public List<UserScore> FindAllUserScore(){
 
         return userScoreRepository.findAll();
