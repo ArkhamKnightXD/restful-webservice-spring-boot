@@ -18,7 +18,7 @@ public class UserScoreController {
     @PutMapping("/request")
     public String saveScoreBody(@RequestBody UserScore userScoreToSave) {
 
-        userScoreService.SaveUserScore(userScoreToSave);
+        userScoreService.saveUserScore(userScoreToSave);
 
         return "Score saved";
     }
@@ -29,6 +29,6 @@ public class UserScoreController {
     @GetMapping("/scores")
     public List<UserScore> findAllScores() {
 
-        return userScoreService.FindAllUserScore();
+        return userScoreService.findAllUserScore();
     }
 }

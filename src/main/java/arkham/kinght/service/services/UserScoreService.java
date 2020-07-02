@@ -13,13 +13,13 @@ public class UserScoreService {
     private UserScoreRepository userScoreRepository;
 
 
-    public void SaveUserScore(UserScore userScore){
+    public void saveUserScore(UserScore userScore){
 
         userScoreRepository.save(userScore);
     }
 
 
-    public List<UserScore> FindAllUserScore(){
+    public List<UserScore> findAllUserScore(){
 
         return userScoreRepository.findAll();
     }
